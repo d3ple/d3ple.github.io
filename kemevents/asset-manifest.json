@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/kemevents/static/css/main.d235777f.chunk.css",
+    "main.js": "/kemevents/static/js/main.de27458d.chunk.js",
+    "main.js.map": "/kemevents/static/js/main.de27458d.chunk.js.map",
+    "runtime-main.js": "/kemevents/static/js/runtime-main.91731410.js",
+    "runtime-main.js.map": "/kemevents/static/js/runtime-main.91731410.js.map",
+    "static/css/2.764ccc25.chunk.css": "/kemevents/static/css/2.764ccc25.chunk.css",
+    "static/js/2.9aeb17f3.chunk.js": "/kemevents/static/js/2.9aeb17f3.chunk.js",
+    "static/js/2.9aeb17f3.chunk.js.map": "/kemevents/static/js/2.9aeb17f3.chunk.js.map",
+    "index.html": "/kemevents/index.html",
+    "precache-manifest.ca0b7f2410e5e7a304ade8bec6497dd8.js": "/kemevents/precache-manifest.ca0b7f2410e5e7a304ade8bec6497dd8.js",
+    "service-worker.js": "/kemevents/service-worker.js",
+    "static/css/2.764ccc25.chunk.css.map": "/kemevents/static/css/2.764ccc25.chunk.css.map",
+    "static/css/main.d235777f.chunk.css.map": "/kemevents/static/css/main.d235777f.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.91731410.js",
+    "static/css/2.764ccc25.chunk.css",
+    "static/js/2.9aeb17f3.chunk.js",
+    "static/css/main.d235777f.chunk.css",
+    "static/js/main.de27458d.chunk.js"
+  ]
+}
