@@ -1,0 +1,22 @@
+
+.error {
+  &Title {
+    margin-bottom: 20px;
+    
+    @include below('t_md') {
+      margin-bottom: 5px;
+    }
+  }
+
+  &Assign {
+    @include display-flex(column, flex-start, flex-start);
+  
+    &Item {
+      @include display-flex(row, flex-start, flex-start);
+    }
+  
+    &Item:not(:last-child) {
+      margin-bottom: 11px;
+    }
+  }
+}

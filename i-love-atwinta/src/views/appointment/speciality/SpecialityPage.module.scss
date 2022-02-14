@@ -1,0 +1,24 @@
+.layout {
+  &ChooseSection,
+  &CurrentHospital,
+  &ShowMore,
+  &Heading {
+    grid-column: 1 / -1;
+  }
+
+  &ShowMore {
+    @include display-flex(row, center, center);
+  }
+
+  &Cards {
+    grid-column: 1 / -1;
+
+    > * {
+      @include stack-space(20px);
+    }
+  }
+}
+
+.hospitalNoFoundData {
+  margin-top: calc(94px - 50px);
+}

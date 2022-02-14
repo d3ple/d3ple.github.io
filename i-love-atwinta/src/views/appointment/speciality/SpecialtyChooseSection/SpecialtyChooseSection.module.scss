@@ -1,0 +1,33 @@
+.specialityCardsGrid {
+  margin: 50px 0 100px 0;
+
+  @include below('t_md') {
+    margin-bottom: 28px
+  }
+  
+  @include at('d_md') {
+    @include display-grid(16, 33px, 20px);
+  }
+
+  @include between('t_lg', 'd_md') {
+    @include display-grid(12, 20px, 20px);
+  }
+
+  @include between('t_md', 't_lg') {
+    @include display-grid(8, 16px, 20px);
+  }
+
+  @include below('t_md') {
+    @include display-grid(4, 16px, 16px);
+  }
+
+  > * {
+    grid-column: span 4;
+  }
+}
+
+.hospitalNoFoundData {
+  grid-column: 1 / -1;
+  margin-top: 94px;
+  margin-bottom: 100px;
+}

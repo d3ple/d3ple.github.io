@@ -1,0 +1,16 @@
+.breadcrumb {
+  text-decoration: none;
+  color: inherit;
+  font-family: 'Rubik', sans-serif;
+  @include display-flex(row, flex-start, center);
+  margin: 30px 0;
+  width: fit-content;
+
+  @include below('t_md') {
+    margin: 28px 0 16px 0;
+  }
+
+  img {
+    margin-right: 7px;
+  }
+}

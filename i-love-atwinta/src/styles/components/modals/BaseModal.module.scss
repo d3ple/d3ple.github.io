@@ -1,0 +1,20 @@
+.modalWrapper {
+  position: relative;
+  padding: 40px;
+
+  @include below('t_md') {
+    padding: 27px 20px 38px 20px;
+  }
+}
+
+.modalOptions {
+  margin-top: 46px;
+
+  @include below('t_lg') {
+    margin-top: 39px;
+  }
+}
+
+.modalCenter {
+  @include display-flex(column, center, center);
+}

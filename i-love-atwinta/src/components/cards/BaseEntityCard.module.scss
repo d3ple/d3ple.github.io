@@ -1,0 +1,44 @@
+// Note: Базовый лейаут для карточек, без привязки к сущности
+
+.card {
+  border: 2px solid #CBD5E0;
+  border-radius: 10px;
+  background-color: white;
+  cursor: pointer;
+  overflow: hidden;
+  
+  @include at('t_lg') {
+    @include display-grid(12, 32px, 0);
+  }
+
+  @include between('t_md', 't_lg') {
+    @include display-grid(8, 32px, 0);
+  }
+
+  &Description {
+    grid-column: 3 / -1;
+    padding: 27px 0;
+
+    @include below('t_md') {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &Image {
+    @include display-flex(row, center, center);
+    grid-column: span 2;
+    position: relative;
+    width: 207px;
+    height: 100%;
+
+    background-color: white;
+
+    @include display-flex(row, center, center);
+
+    @include below('t_md') {
+      grid-column: span 1;
+      width: 102px;
+      height: 102px;
+    }
+  }
+}

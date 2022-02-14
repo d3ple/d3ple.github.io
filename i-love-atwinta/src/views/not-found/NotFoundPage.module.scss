@@ -1,0 +1,77 @@
+.notFound {
+  grid-column:  1 / -1;
+  @include display-flex(column, flex-start, center);
+
+
+  @include at('d_md') {
+    margin-top: 80px;
+  }
+  
+  @include between('t_lg', 'd_md') {
+    margin-top: 150px;
+  }
+
+  @include between('t_md', 't_lg') {
+    margin-top: 150px;
+  }
+
+  @include between('t_md', 't_lg') {
+    margin-top: 100px;
+  }
+
+  @include below('t_md') {
+    margin-top: 48px;
+  }
+
+  &Illustration {
+    background-image: url('~assets/icons/not-found.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+
+    @include at('d_md') {
+      height: 414px;
+    }
+    
+    @include between('t_lg', 'd_md') {
+      height: 382px;
+    }
+
+    @include between('t_md', 't_lg') {
+      height: 380px;
+    }
+
+    @include between('t_md', 't_lg') {
+      height: 281px;
+    }
+
+    @include below('t_md') {
+      height: 130px;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 21px;
+  text-align: center;
+  margin-top: 12px;
+
+  @include between('t_md', 't_lg') {
+    max-width: 520px;
+  }
+}
+
+.message {
+  @include display-flex(column, center, center);
+  text-align: center;
+
+  @include between('t_md', 'd_md'){
+    max-width: 530px;
+  }
+
+  @include below('t_md') {
+    align-items: flex-start;
+    text-align: start;
+  }
+}

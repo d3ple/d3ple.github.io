@@ -1,0 +1,86 @@
+.card {
+  height: 112px;
+  background-color: white;
+  border-radius: 7px;
+  padding: 14px 14px 17px 14px;
+  border-width: 2px;
+  border-style: solid;
+  overflow: hidden;
+  @include display-flex(column, space-between, flex-start);
+
+  @include below('t_md') {
+    height: 72px;
+    @include display-flex(row, center, center);
+  }
+
+  &Description,
+  &Status {
+    @include below('t_md') {
+      display: none;
+    }
+  }
+
+  &Disabled {
+    border-color: map-get($grey, 'lighten-3');
+
+    &Time {
+      color: map-get($grey, 'lighten-2');
+    }
+  }
+  
+  &Available {
+    cursor: pointer;
+    border-color: map-get($blue, 'lighten-1');
+    transition: all 200ms ease-in-out;
+
+    &Time {
+      color: map-get($grey, 'base');
+    }
+
+    &:hover {
+      background-color: map-get($blue, 'secondary');
+      border-color: map-get($blue, 'secondary');
+
+      .cardAvailableTime,
+      .cardAvailableStatus,
+      .cardAvailableDescription {
+        color: white;
+      }
+    }
+  }
+
+  &Time {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    margin-bottom: 3px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.025rem;
+
+    @include below('t_md') {
+      font-size: 1.125rem;
+    }
+  }
+
+  &Status {
+    font-family: 'Rubik', sans-serif;
+    margin: 5px 0 7px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    color: map-get($grey, 'base');
+  }
+
+  &Status.cardDisabledStatus{
+    color: map-get($grey, 'lighten-2');
+  }
+
+  &Description {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: map-get($grey, 'lighten-2');
+    line-height: 16px;
+  }
+}

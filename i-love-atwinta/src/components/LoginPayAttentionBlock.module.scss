@@ -1,0 +1,73 @@
+.item {
+  @include display-flex(row, flex-start, center);
+
+  column-gap: 60px;
+
+  *:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
+  @include below('t_md') {
+    column-gap: 32px;
+  }
+}
+
+.container {
+  height: 100%;
+  padding: 50px 40px 50px 40px;
+  border-radius: 10px;
+  box-shadow: $default-box-shadow;
+  background-color: white;
+
+  @include below('m_lg') {
+    padding: 20px;
+    margin: 0 -20px;
+    border-radius: 0px;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  &Attention {
+    margin-bottom: 50px;
+
+    @include below('m_lg') {
+      margin-bottom: 10px;
+    }
+  }
+
+  &Text {
+    margin: 40px 0;
+
+    @include below('m_lg') {
+      margin: 28px 0px 34px 0;
+    }
+  }
+}
+
+.itemsTitle {
+  margin-bottom: 38px;
+
+  @include below('m_lg') {
+    margin-bottom: 22px;
+  }
+}
+
+.payAttentionIcon {
+  flex-shrink: 0;
+  @include display-flex(row, center, center);
+  
+  @include below('m_lg') {
+    background-color: white;
+    width: 56px;
+    height: 56px;
+  }
+
+  > img {
+    max-width: 100%;
+
+    @include below('m_lg') {
+      width: 33px;
+      height: 33px;
+    }
+  }
+}

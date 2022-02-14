@@ -1,0 +1,47 @@
+.steps {
+  grid-column: 1 / -1;
+
+  background-color: white;
+  &Label {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: map-get($blue, 'secondary');
+
+    &.disabled {
+      color: map-get($grey, 'lighten-2');
+    }
+    
+    &Numeric {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 3.125rem;
+      margin-right: 12px;
+    }
+
+    &Text {
+      text-align: start;
+      font-weight: 700;
+      font-size: 0.875rem;
+    }
+  }
+
+  &Indicator {
+    width: 100%;
+    background-color: '#635ee7';
+  }
+
+  &Main {
+    width: 100%;
+
+    @include below('t_md') {
+      display: none;
+    }
+  }
+
+  &Progress {
+    @include at('t_md') {
+      display: none;
+    }
+  }
+}

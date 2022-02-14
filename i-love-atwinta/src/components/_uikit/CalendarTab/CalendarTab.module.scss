@@ -1,0 +1,5 @@
+.calendarTab {
+  @include display-flex(row, space-between, center);
+  background-color: white;
+  padding: 15px 24px;
+}

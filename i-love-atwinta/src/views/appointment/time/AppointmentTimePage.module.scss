@@ -1,0 +1,9 @@
+.layout {
+  &CurrentHospital {
+    grid-column: 1 / -1;
+  }
+
+  &AppointmentSchedule {
+    grid-column: 1 / -1;
+  }
+}

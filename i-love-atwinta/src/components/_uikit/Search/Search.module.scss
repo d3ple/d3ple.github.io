@@ -1,0 +1,28 @@
+/* 
+ / Note: В данном файле находится всё, что связано с стилизации поисковой строкой.
+*/
+.searchHospitalField {
+  position: relative;
+
+  &::before {
+    @include pseudo;
+    background-image: url('~assets/icons/uikit/search-icon.svg');
+    background-size: cover;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    
+    @include below('t_md') {
+      display: none;
+    }
+  }
+}
+
+.confirmButton {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}

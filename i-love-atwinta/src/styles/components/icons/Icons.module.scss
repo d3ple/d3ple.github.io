@@ -1,0 +1,32 @@
+.logo {
+  &Title {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: map-get($blue, 'darken-1');
+    white-space: nowrap;
+
+    @include below('t_md') {
+      font-size: 1.375rem;
+    }
+  }
+
+  &Container {
+    width: 51px;
+    height: 51px;
+
+    @include below('t_md') {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &Wrapper {
+    cursor: pointer;
+    @include display-flex(row, flex-start, center);
+
+    > * {
+      @include inline-space(16px);
+    }
+  }
+}

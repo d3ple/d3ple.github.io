@@ -1,0 +1,15 @@
+.Label {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 168px;
+  @include below ('m_sm-1') {
+    width: 130px !important;
+  }
+
+  @include between ('m_sm-1', 't_md') {
+    width: 160px;
+  }
+  border: 2px solid #CBD5E0; // ToDo заменить на переменные
+  border-radius: 25px;
+  padding: 6px 10px;
+}

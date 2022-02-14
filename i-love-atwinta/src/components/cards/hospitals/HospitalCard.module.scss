@@ -1,0 +1,93 @@
+.hospitalCard {
+  &PrivateSign {
+    position: absolute;
+    left: 13px;
+    top: 9px;
+
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    @include below('t_md') {
+      left: 0;
+      top: 0;
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+
+  &Description {
+    height: 100%;
+    @include display-flex(column, center, flex-start);
+
+    @include below('m_lg') {
+      padding: 0;
+    }
+
+    gap: 14px;
+
+    &Container {
+      @include display-flex(column, flex-start, flex-start);
+      gap: 5px;
+
+      @include below ('t_lg') {
+        gap: 13px;
+      }
+    }
+
+    &Text {
+      white-space: normal;
+      @include display-flex(row, flex-start, center);
+      gap: 13px;
+
+      &Container {
+        @include below('t_md') {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &Icon {
+    @include display-flex(row, center, center);
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    &Container {
+      @include display-flex(row, center, center);
+      border-right: 1px solid #F4F4F4;
+      height: 100%;
+      width: 100%;
+      padding: 25px 20px;
+
+      > img {
+        height: 107px;
+        width: 207px;
+      }
+
+      &Parent {
+        padding: 25px 18px;
+      }
+
+      @include below('t_md') {
+        padding: 20px;
+
+        > img {
+          width: 57px;
+          height: 64px;
+        }
+
+        &Parent {
+          padding: 25px 10px;
+        }
+
+        border: 1px solid map-get($grey, 'lighten-3');
+        border-radius: 10px;
+      }
+    }
+  }
+}

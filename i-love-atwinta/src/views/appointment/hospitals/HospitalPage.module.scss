@@ -1,0 +1,72 @@
+.layout {
+  &Search {
+    &Bar {
+      grid-column: span 8;
+  
+      @include below('d_md') {
+        grid-column: 1 / -1;
+        margin: 10px 0px 28px 0px;
+      }
+      
+      @include below('t_md') {
+        background-color: #D3EBFF;
+        margin: 10px -20px 28px -20px;
+      }
+    }
+
+    &Filters {
+      grid-column: span 4;
+      @include display-flex(row, flex-end, center);
+      gap: 48px;
+
+      @include below('d_md') {
+        grid-column: 1 / -1;
+        @include display-flex(row, flex-start, center);
+      }
+
+      @include below('m_md') {
+        @include display-flex(row, space-between, center);
+        gap: 15px;
+        // Note: убираем отступы
+        > * {
+          @include inline-space(0);
+        }
+      }
+    }
+  }
+
+  &Heading {
+    grid-column: 1 / -1;
+  }
+
+  &Cards {
+    grid-column: 1 / -1;
+
+    > * {
+      @include stack-space(20px);
+    }
+
+    &Pagination {
+      margin-top: 31px;
+      grid-column: 1 / -1;
+      @include display-flex(row, space-between, center);
+
+      @include below('t_md') {
+        margin-top: 28px;
+      }
+    }
+  }
+
+  &Container {
+    grid-column: 1 / -1;
+    margin: 50px 0;
+
+    @include below('t_md') {
+      margin: 10px 0 28px 0;
+    }
+  }
+}
+
+.hospitalNoFoundData {
+  margin-top: calc(94px - 50px);
+}

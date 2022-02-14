@@ -1,0 +1,68 @@
+.loginContainer {
+  position: relative;
+  grid-column: 1 / -1;
+  margin-bottom: 100px;
+
+  @include between('m_lg', 't_md') {
+    margin-bottom: 41px;
+  }
+
+  @include below('m_lg') {
+    margin-bottom: 28px;
+  } 
+}
+
+.loginForm {
+  grid-column: 1 / -1;
+  margin: 0 auto;
+
+  @include at('t_lg') {
+    @include display-flex(row, flex-start, center);
+    column-gap: 22px;
+    // @include display-grid(12, 32px, 0);
+  }
+
+  @include between('t_md', 't_lg') {
+    @include display-grid(8, 32px, 0);
+    row-gap: 50px;
+  }
+
+  @include below('t_md') {
+    @include display-grid(4, 24px, 0);
+    row-gap: 50px;
+    background-color: transparent;
+  }  
+
+  &Itself {
+    width: 100%;
+    max-width: 504px;
+
+    @include below('t_lg') {
+      max-width: 100%;
+    }
+    @include between('t_md', 't_lg') {
+      grid-column: span 8;
+    }
+    @include below('t_md') {
+      grid-column: span 4;
+    }
+  }
+
+  &Information {
+    width: 100%;
+    max-width: 882px;
+    align-self: stretch;
+    @include below('t_lg') {
+      max-width: 100%;
+    }
+
+    @include between('t_md','t_lg') {
+      align-self: stretch;
+      grid-column: span 8;
+    }
+    @include below('t_md') {
+      grid-column: span 4;
+    }
+  }
+}
+

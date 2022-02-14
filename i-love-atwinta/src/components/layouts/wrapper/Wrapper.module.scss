@@ -1,0 +1,21 @@
+.wrapper {
+  max-width: calc(1456px + 32px);
+  padding: 0 20px;
+  margin: 0 auto;
+
+  &NoPadding {
+    padding: 0;
+  }
+
+  @include at('t_lg') {
+    @include display-grid(12, 32px, 0);
+  }
+
+  @include between('t_md', 't_lg') {
+    @include display-grid(8, 32px, 0);
+  }
+
+  @include below('t_md') {
+    @include display-grid(4, 24px, 0);
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react",
+    "useDefineForClassFields": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "strict": true,
+    "noEmit": true,
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["src/*"],
+    },
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+  ],
+}

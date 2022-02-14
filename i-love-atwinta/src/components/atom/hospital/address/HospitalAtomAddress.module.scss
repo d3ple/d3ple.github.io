@@ -1,0 +1,13 @@
+.defaultIconClass {
+  width: 100%;
+  flex-shrink: 1;
+
+  > svg {
+    width: 100%;
+  }
+}
+
+.iconContainer {
+  @include display-flex(row, flex-start, center);
+  gap: 10px;
+}

@@ -1,0 +1,10 @@
+.progressBar {
+  padding: 25px 0 32px 0;
+  &TitleContainer {
+    @include display-flex(row, space-between, center);
+    margin-bottom: 12px;
+  }
+  &Steps {
+    flex-shrink: 0,
+  }
+}
