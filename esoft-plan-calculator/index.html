@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Esoft Plan Calculator</title>
+    <style type="text/css">
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-family: sans-serif;
+      }
+
+      .label {
+        display: block;
+        margin-bottom: 7px;
+        font-size: 20px;
+      }
+
+      .textarea {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .count-btn {
+        display: block;
+        margin-top: 5px;
+      }
+
+      .results {
+        margin-top: 25px;
+      }
+
+      .hidden {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <label class="label" for="tasks">Вставьте задачи:</label>
+        <textarea
+          class="textarea"
+          id="tasks"
+          name="tasks"
+          rows="10"
+          cols="80"
+        ></textarea>
+        <button class="count-btn" onclick="count()">Посчитать</button>
+
+        <div id="results-block" class="results hidden">
+          <p>Результаты:</p>
+          <ul id="results-list"></ul>
+        </div>
+      </div>
+    </main>
+
+    <script type="text/javascript">
+      const count = () => {
+        const textarea = document.getElementById("tasks");
+        const text = textarea.value;
+        const regex = /(.*?)\/\s*((\S*\s*\S*)\s*\/\s*(.*))/gm;
+        const parsed = [...text.matchAll(regex)].map(string => [
+          string[3],
+          string[4]
+        ]);
+        const results = {};
+
+        parsed.map(str => {
+          if (!results.hasOwnProperty(str[0])) {
+            results[str[0]] = 0;
+          }
+
+          if (!!str[1].match(/(\d*)d\s?/)) {
+            results[str[0]] =
+              results[str[0]] + Number(str[1].match(/(\d*)d\s?/)[1]) * 24;
+            str[1] = str[1].replace(/(\d*)d\s?/, "");
+          }
+
+          if (!!str[1].match(/(\d*)h\s?/)) {
+            results[str[0]] =
+              results[str[0]] + Number(str[1].match(/(\d*)h\s?/)[1]);
+            str[1] = str[1].replace(/(\d*)h\s?/, "");
+          }
+
+          if (!!str[1].match(/(\d*)m\s?/)) {
+            results[str[0]] =
+              results[str[0]] + Number(str[1].match(/(\d*)m\s?/)[1]) / 60;
+            str[1] = str[1].replace(/(\d*)m\s?/, "");
+          }
+        });
+
+        printResults(results);
+      };
+
+      const printResults = results => {
+        const resultsBlock = document.getElementById("results-block");
+        const resultsList = document.getElementById("results-list");
+        resultsBlock.classList.remove("hidden");
+        resultsList.querySelectorAll("*").forEach(n => n.remove());
+
+        for (const name in results) {
+          let result = document.createElement("li");
+          result.innerHTML = `${name} - ${results[name].toFixed(1)}ч.`;
+          resultsList.append(result);
+        }
+      };
+    </script>
+  </body>
+</html>
